@@ -15,5 +15,4 @@ public interface PersonDao {
 
     @Select("select * from person")
     void query(String name);
-
 }

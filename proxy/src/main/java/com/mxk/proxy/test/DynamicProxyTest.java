@@ -21,7 +21,5 @@ public class DynamicProxyTest {
         PersonDao dao = (PersonDao) Proxy.newProxyInstance(DynamicProxyTest.class.getClassLoader(),
                 clazz,new MxkInvocationHandler());
         dao.query("mxk");
-
-
     }
 }

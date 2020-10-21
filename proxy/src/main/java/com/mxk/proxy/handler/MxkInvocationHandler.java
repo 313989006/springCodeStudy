@@ -12,7 +12,6 @@ import java.lang.reflect.Method;
  **/
 public class MxkInvocationHandler implements InvocationHandler {
 
-
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         // 打印select语句
