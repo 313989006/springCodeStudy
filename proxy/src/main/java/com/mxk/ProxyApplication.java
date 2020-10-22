@@ -1,4 +1,4 @@
-package com.mxk.proxy;
+package com.mxk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
