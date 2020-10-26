@@ -32,6 +32,8 @@ public class MxkImportBeanDefinitionRegistrar implements ImportBeanDefinitionReg
         AbstractBeanDefinition beanDefinition = definitionBuilder.getBeanDefinition();
         AbstractBeanDefinition beanDefinition2 = definitionBuilder2.getBeanDefinition();
 
+        // 获取到当前beanDefinition即MxkFactoryBean中所有的构造方法的参数，默认是null，如果传过来的是哪个Dao层就传哪个Dao
+        // 然后添加value为com.mxk.beanFactory.dao.MxkDao，就能够new出来，并且AutoWired
         beanDefinition.getConstructorArgumentValues().addGenericArgumentValue("com.mxk.beanFactory.dao.MxkDao");
         beanDefinition2.getConstructorArgumentValues().addGenericArgumentValue("com.mxk.beanFactory.dao.AnhuiDao");
 

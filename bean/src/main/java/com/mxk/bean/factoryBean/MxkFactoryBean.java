@@ -58,4 +58,12 @@ public class MxkFactoryBean implements FactoryBean {
         // 实例化单个Dao的时候，第一种使用MxkDao
         return clazz;
     }
+
+    public Class getClazz() {
+        return clazz;
+    }
+
+    public void setClazz(Class clazz) {
+        this.clazz = clazz;
+    }
 }

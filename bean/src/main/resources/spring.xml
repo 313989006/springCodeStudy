@@ -5,8 +5,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--基于XML开发的话，要配置下面这些-->
     <bean id="mxkDao" class="com.mxk.bean.factoryBean.MxkFactoryBean">
+        <!--clazz就是构造方法的参数-->
+        <!--com.mxk.beanFactory.dao.MxkDao 传到MxkImportBeanDefinitionRegistrar 去注册，
+        然后传到MxkFactoryBean 的构造方法去实例化Dao-->
+
         <constructor-arg name="clazz" value="com.mxk.beanFactory.dao.MxkDao"></constructor-arg>
+
+        <!--如果clazz有get，set方法，可以这么写-->
+        <!--<property name="clazz" value="com.mxk.beanFactory.dao.MxkDao"></property>-->
     </bean>
 
     <bean id="anhuiDao" class="com.mxk.bean.factoryBean.MxkFactoryBean">
