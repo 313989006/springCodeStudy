@@ -18,6 +18,12 @@ public class MxkImportBeanDefinitionRegistrar implements ImportBeanDefinitionReg
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
 
+
+        // 扫描某个包下所有的类，比如dao包下的
+        // 拿到List
+        // for循环，把Dao添加到默认构造方法的参数，如：beanDefinition.getConstructorArgumentValues().addGenericArgumentValue("com.mxk.beanFactory.dao.MxkDao");
+
+
         // 构建MxkFactoryBean
         BeanDefinitionBuilder definitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(MxkFactoryBean.class);
         BeanDefinitionBuilder definitionBuilder2 = BeanDefinitionBuilder.genericBeanDefinition(MxkFactoryBean.class);
