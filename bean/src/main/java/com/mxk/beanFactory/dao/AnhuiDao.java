@@ -3,6 +3,9 @@ package com.mxk.beanFactory.dao;
 
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+import java.util.Map;
+
 /**
 * @Description: 省dao层（测试jdk动态代理）
 * @Param:
@@ -13,5 +16,5 @@ import org.apache.ibatis.annotations.Select;
 public interface AnhuiDao {
 
     @Select("select * from anhui")
-    void query(String name);
+    List<Map<String,String>> query();
 }

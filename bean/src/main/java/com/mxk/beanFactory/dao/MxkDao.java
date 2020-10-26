@@ -1,5 +1,6 @@
 package com.mxk.beanFactory.dao;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;

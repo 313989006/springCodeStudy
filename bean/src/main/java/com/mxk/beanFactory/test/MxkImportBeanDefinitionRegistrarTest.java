@@ -19,6 +19,7 @@ public class MxkImportBeanDefinitionRegistrarTest {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MxkConfig.class);
 
 //        System.out.println(context.getBean("mxkFactoryBean"));
+
         MxkService mxkService = context.getBean(MxkService.class);
         mxkService.select();
     }

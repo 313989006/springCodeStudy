@@ -1,7 +1,7 @@
 package com.mxk.bean.test;
 
 import com.mxk.BeanApplication;
-import com.mxk.bean.factoryBean.MxkFactoryBean;
+//import com.mxk.bean.factoryBean.MxkFactoryBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

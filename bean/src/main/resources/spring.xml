@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mxkDao" class="com.mxk.bean.factoryBean.MxkFactoryBean">
+        <constructor-arg name="clazz" value="com.mxk.beanFactory.dao.MxkDao"></constructor-arg>
+    </bean>
+
+    <bean id="anhuiDao" class="com.mxk.bean.factoryBean.MxkFactoryBean">
+        <constructor-arg name="clazz" value="com.mxk.beanFactory.dao.AnhuiDao"></constructor-arg>
+    </bean>
+</beans>

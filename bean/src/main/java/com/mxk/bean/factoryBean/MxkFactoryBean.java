@@ -19,32 +19,43 @@ import java.lang.reflect.Proxy;
 public class MxkFactoryBean implements FactoryBean {
 
     // 项目中会有多个Dao，怎么办呢？
-//    Class clazz;
-//
-//    public MxkFactoryBean(Class clazz){
-//        this.clazz = clazz;
-//    }
+    Class clazz;
+
+    public MxkFactoryBean(Class clazz){
+        this.clazz = clazz;
+    }
 
 
     @Override
     public Object getObject() throws Exception {
 
-        // 实例化单个Dao的时候，第一种使用MxkDao
-        Class[] clazzes = new Class[]{MxkDao.class};
+//        // 实例化单个Dao的时候，第一种使用MxkDao
+//        Class[] clazzes = new Class[]{MxkDao.class};
+//        // MxkInvocationHandler 实现了MxkDao的query()
+//        MxkDao dao = (MxkDao) Proxy.newProxyInstance(MxkImportBeanDefinitionRegistrarTest.class.getClassLoader(),
+//                clazzes, new MxkInvocationHandler());
+//        // 返回代理类
+//        return dao;
+//        // 实例化单个Dao的时候，第二种使用直接new一个Mxk类
+////        return new Mxk();
+
+        // 实例化多个Dao的时候
+        Class[] clazzes = new Class[]{clazz};
         // MxkInvocationHandler 实现了MxkDao的query()
-        MxkDao dao = (MxkDao) Proxy.newProxyInstance(MxkImportBeanDefinitionRegistrarTest.class.getClassLoader(),
+        Object dao = Proxy.newProxyInstance(MxkImportBeanDefinitionRegistrarTest.class.getClassLoader(),
                 clazzes, new MxkInvocationHandler());
         // 返回代理类
         return dao;
-        // 实例化单个Dao的时候，第二种使用直接new一个Mxk类
-//        return new Mxk();
     }
 
     @Override
     public Class<?> getObjectType() {
+//        // 实例化单个Dao的时候，第一种使用MxkDao
+//        return MxkDao.class;
+//        // 实例化单个Dao的时候，第二种使用直接new一个Mxk类
+////        return Mxk.class;
+
         // 实例化单个Dao的时候，第一种使用MxkDao
-        return MxkDao.class;
-        // 实例化单个Dao的时候，第二种使用直接new一个Mxk类
-//        return Mxk.class;
+        return clazz;
     }
 }
