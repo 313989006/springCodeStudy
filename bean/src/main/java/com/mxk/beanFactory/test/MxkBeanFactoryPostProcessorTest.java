@@ -1,6 +1,7 @@
 package com.mxk.beanFactory.test;
 
 import com.mxk.BeanApplication;
+import com.mxk.bean.config.MxkConfig;
 import com.mxk.component.entity.Person;
 import com.mxk.component.entity.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,7 +15,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MxkBeanFactoryPostProcessorTest {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanApplication.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MxkConfig.class);
         // MxkBeanFactoryPostProcessor已经把Person中beanDefinition的beanClass改成User了，这里在getBean会报错
 //        System.out.println(context.getBean(Person.class));
         // 如果将 MxkBeanFactoryPostProcessor 中beanDefinition.setBeanClass(User.class);注释掉，
