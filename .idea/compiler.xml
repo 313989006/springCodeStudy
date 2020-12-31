@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="jvm" />
         <module name="hashMapDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hashMapDemo" target="1.8" />
+      <module name="jvm" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
