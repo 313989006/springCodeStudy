@@ -19,6 +19,12 @@ import java.util.HashMap;
  *      系统是根据 hash 值计算索引值，这个索引值应该是平均分布的
  *      如果数组的长度为 16，可以把  hash 值对 16 求余，把余数作为数组的下标
  *              (n - 1) & hash
+ *
+ *  JDK 1.7 采用的是头插法
+ *
+ *
+ *  JDK 1.8 采用的是尾插法
+ *  JDK 1.8当链表的长度超过8 （>8） ,会自动将链表转成红黑树
 */
 public class HashMapDemo {
     public static void main(String[] args) {
@@ -71,5 +77,14 @@ public class HashMapDemo {
          * 可以快速计算出对应的数组的索引值
         */
 
+
+
+        /**
+        * 验证put的key为一样的两个put，最终key会不会被覆盖
+        */
+        HashMap map = new HashMap();
+        map.put(1,"zhangsan1");
+        map.put(1,"zhangsan2");
+        System.out.println(map.get(1));
     }
 }

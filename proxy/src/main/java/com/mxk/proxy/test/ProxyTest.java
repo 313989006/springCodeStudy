@@ -25,7 +25,7 @@ public class ProxyTest {
         UserDao userDao = new UserDaoImpl();
         UserDao proxy1 = new com.mxk.proxy.proxyPoly.LogUserProxy(userDao);
         UserDao proxy2 = new TimerUserProxy(proxy1);
-        proxy2.query("mxk");
+        proxy1.query("mxk");
 
     }
 }
