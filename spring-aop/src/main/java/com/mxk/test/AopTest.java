@@ -18,6 +18,6 @@ public class AopTest {
 
         UserDao userDao = context.getBean(UserDao.class);
         userDao.say();
-        userDao.cry();
+//        userDao.cry();
     }
 }

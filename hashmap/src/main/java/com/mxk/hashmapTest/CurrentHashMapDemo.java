@@ -1,6 +1,5 @@
 package com.mxk.hashmapTest;
 
-
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -8,15 +7,13 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  *  数据结构：数组 + 链表 + 红黑树
  *
+ *  底层数组的初始化容量：16
+ *
  *  链表长度大于8、且总节点数要大于64，系统会自动将链表转成红黑树（TREEIFY_THREDHOLD = 8，MIN_TREEIFY_CAPACITY = 64）
  *  左旋右旋 做成平衡二叉树
  *
  *  每个Node节点插入数据的时候加锁 synchronized
  *  转红黑树的时候，也在Node节点加锁 synchronized
- *
- *
- *
- *
  *
  *
  **/
